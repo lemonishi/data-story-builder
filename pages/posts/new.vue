@@ -1,16 +1,3 @@
 <template>
-  <div>
-    <client-only>
-      <tiptap-editor />
-    </client-only>
-  </div>
+  <Editor />
 </template>
-
-<script>
-import TiptapEditor from "~/components/Editor.vue";
-export default {
-  components: {
-    TiptapEditor,
-  },
-};
-</script>
