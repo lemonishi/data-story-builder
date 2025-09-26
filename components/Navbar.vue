@@ -1,25 +1,6 @@
 <script setup>
 import { ref, watch } from "vue";
 
-const items = [
-  {
-    title: "Foo",
-    value: "foo",
-  },
-  {
-    title: "Bar",
-    value: "bar",
-  },
-  {
-    title: "Fizz",
-    value: "fizz",
-  },
-  {
-    title: "Buzz",
-    value: "buzz",
-  },
-];
-
 const drawer = ref(false);
 const group = ref(null);
 
@@ -30,28 +11,28 @@ watch(group, () => {
 
 <template>
   <v-app-bar
-    scroll-behavior="collapse"
-    scroll-threshold="30"
+    class="container"
+    :elevation="0"
   >
-    <template v-slot:prepend>
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
-    </template>
-
-    <v-app-bar-title to="/">Data Story Builder</v-app-bar-title>
+    <template v-slot:prepend
+      ><v-app-bar-title @click="$router.push('/')"
+        >Story Maker</v-app-bar-title
+      ></template
+    >
 
     <template v-slot:append>
       <v-btn
         icon="mdi-plus"
         @click="$router.push('/posts/new')"
+        class="button"
       ></v-btn>
     </template>
   </v-app-bar>
-
-  <v-navigation-drawer
-    v-model="drawer"
-    :location="$vuetify.display.mobile ? 'bottom' : undefined"
-    temporary
-  >
-    <v-list :items="items"></v-list>
-  </v-navigation-drawer>
 </template>
+
+<style scoped>
+.button {
+  background-color: #88e788;
+  border: 1px solid grey;
+}
+</style>

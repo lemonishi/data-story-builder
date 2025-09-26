@@ -13,6 +13,9 @@ import Navbar from "../components/Navbar.vue";
 
 <style scoped>
 .main {
-  padding: 4.5rem 0.5rem 0;
+  display: flex;
+  flex-direction: column;
+  background-color: #d3d3d3;
+  padding: 5.5rem 1rem 0;
 }
 </style>
